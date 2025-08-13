@@ -1,5 +1,5 @@
 import time
-from typing import Any, Optional, Union
+from typing import Any, Optional, Union, Tuple
 
 import glm
 from glm import cos, radians, sin
@@ -11,9 +11,9 @@ from moderngl_window.scene.camera import Camera
 class OrbitCamera(Camera):
     def __init__(
         self,
-        target: Union[glm.vec3, tuple[float, float, float]] = (0.0, 0.0, 0.0),
+        target: Union[glm.vec3, Tuple[float, float, float]] = (0.0, 0.0, 0.0),
         radius: float = 2.0,
-        angles: tuple[float, float] = (60.0, -100.0),
+        angles: Tuple[float, float] = (60.0, -100.0),
         **kwargs: Any,
     ):
         self.radius = radius  # radius in base units

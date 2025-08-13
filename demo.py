@@ -17,7 +17,6 @@ from droid_async import DroidAsync
 
 import torch.nn.functional as F
 
-
 def show_image(image):
     image = image.permute(1, 2, 0).cpu().numpy()
     cv2.imshow('image', image / 255.0)
