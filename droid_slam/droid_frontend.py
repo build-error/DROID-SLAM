@@ -7,7 +7,6 @@ from factor_graph import FactorGraph
 
 from cuda_timer import CudaTimer
 
-
 ENABLE_TIMING = False
 
 class DroidFrontend:
@@ -47,6 +46,7 @@ class DroidFrontend:
             self.motion_damping = args.motion_damping
 
     def _init_next_state(self):
+        print(f"[INFO] current pose: {self.video.poses[self.t1].cpu().numpy()}")
         # set pose / depth for next iteration
         self.video.poses[self.t1] = self.video.poses[self.t1 - 1]
 
